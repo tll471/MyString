@@ -38,6 +38,7 @@ int main()
     cout << "В obj1 удаляем 'o' если есть: " << endl;
     obj1.Print();
 
+
     cout << endl;
 
     MyString obj5("Friend");
