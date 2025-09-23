@@ -48,5 +48,7 @@ int main()
 
     cout << "Конструктор переноса: " << endl;
     MyString objLast = move(obj2);
-    objLast.Print();;
+    objLast.Print();
+
+    cout << MyString::count << endl;
 }

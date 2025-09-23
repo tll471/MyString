@@ -21,5 +21,7 @@ public:
 	int MyStrCmp(MyString& b);
 
 	MyString(MyString&& obj);
+	static void PrintCount();
+	static int count;
 };
 
