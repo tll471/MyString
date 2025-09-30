@@ -39,17 +39,92 @@ MyString::~MyString()
 
 MyString::MyString(MyString&& obj)
 {
-	str = obj.str;
-	obj.str = nullptr;
-	length = obj.length;
+    str = obj.str;
+    length = obj.length;
 	length = 0;
 
+    obj.str = nullptr;
+    obj.length = 0;
 }
 int MyString::count = 0;
 void MyString::PrintCount()
 {
 	cout << "Count" << count << endl;
 }
+
+MyString MyString::operator+(MyString& obj)
+{
+	int newDlina = length + obj.length;
+	char* temp = new char[newDlina + 1];
+
+	strcpy_s(temp, newDlina + 1, str);
+	strcat_s(temp, newDlina + 1, obj.str);
+
+	MyString rez(temp);
+	return rez;
+}
+
+MyString MyString::operator+(const char* obj)
+{
+	int dlina_str = strlen(obj);
+	int newDlina = length + dlina_str;
+
+	char* temp = new char[newDlina + 1];
+
+	strcpy_s(temp, newDlina + 1, str);
+	strcat_s(temp, newDlina + 1, obj);
+
+	MyString rez(temp);
+	return rez;
+}
+
+MyString MyString::operator-(const MyString& obj)
+{
+	int newDlina = length - obj.length;
+	char* temp = new char[newDlina + 1];
+
+	//Дальше я не знаю как правильно реализовать
+
+	MyString result(temp);
+	return result;
+}
+
+MyString MyString::operator+(char c)
+{
+	int newLength = length + 1;
+	char* temp = new char[newLength + 1];
+
+	strcpy_s(temp, newLength + 1, str);
+
+	MyString rez(temp);
+	return rez;
+}
+
+
+//MyString MyString::operator+(const char* str1) 
+//{
+//	int newLength = length + strlen(str1) + 1;
+//	MyString rez(newLength + 1);
+//	strcpy_s(rez.str, length + 1, str);
+//	strcat_s(rez.str, newLength + 1, " ");
+//	strcat_s(rez.str, newLength + 1, str1);
+//	rez.length = strlen(rez.str);
+//	return rez;
+//}
+
+//MyString MyString::operator+(char c) 
+//{
+//	int newLength = length + 1;
+//	MyString rez(newLength + 1);
+//	strcpy_s(rez.str, length + 1, str);
+//	strcat_s(rez.str, newLength + 1, " ");
+//
+//	char temp[2] = { c, '\0' };
+//	strcat_s(rez.str, newLength + 1, temp);
+//	rez.length = strlen(rez.str);
+//	return rez;
+//}
+
 
 void MyString::Print()
 {

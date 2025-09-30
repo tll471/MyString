@@ -23,5 +23,9 @@ public:
 	MyString(MyString&& obj);
 	static void PrintCount();
 	static int count;
+	MyString operator+ (MyString& obj);
+	MyString operator+ (const char* obj);
+	MyString operator- (const MyString& obj);
+	MyString operator+ (char c);
 };
 

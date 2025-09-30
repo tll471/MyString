@@ -4,10 +4,9 @@ using namespace std;
 
 int main()
 {
-
     MyString obj1("Hello world");
     obj1.Print();
-    
+
     MyString obj2;
     cout << "Enter string for obj2: " << endl;
     obj2.Input();
@@ -46,9 +45,16 @@ int main()
     cout << "obj5 и obj1: " << obj5.MyStrCmp(obj1) << endl;
     cout << "obj5 и obj5: " << obj5.MyStrCmp(obj5) << endl;
 
-    cout << "Конструктор переноса: " << endl;
-    MyString objLast = move(obj2);
-    objLast.Print();
 
     cout << MyString::count << endl;
+
+    MyString rez = obj1 + obj2;
+    MyString rez2 = obj2 + "!!!";
+    MyString rez3 = obj2 + "&";
+    MyString rez4 = obj1 - "world";
+    cout << "YEEEEEEEEE" << endl;
+    rez.Print();
+    rez2.Print();
+    rez3.Print();
+    rez4.Print();
 }
