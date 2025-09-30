@@ -52,7 +52,7 @@ int main()
     MyString rez2 = obj2 + "!!!";
     MyString rez3 = obj2 + "&";
     MyString rez4 = obj1 - "world";
-    cout << "YEEEEEEEEE" << endl;
+    cout << "-----" << endl;
     rez.Print();
     rez2.Print();
     rez3.Print();

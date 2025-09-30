@@ -37,15 +37,7 @@ MyString::~MyString()
 	delete[] str;
 }
 
-MyString::MyString(MyString&& obj)
-{
-    str = obj.str;
-    length = obj.length;
-	length = 0;
 
-    obj.str = nullptr;
-    obj.length = 0;
-}
 int MyString::count = 0;
 void MyString::PrintCount()
 {
@@ -99,32 +91,6 @@ MyString MyString::operator+(char c)
 	MyString rez(temp);
 	return rez;
 }
-
-
-//MyString MyString::operator+(const char* str1) 
-//{
-//	int newLength = length + strlen(str1) + 1;
-//	MyString rez(newLength + 1);
-//	strcpy_s(rez.str, length + 1, str);
-//	strcat_s(rez.str, newLength + 1, " ");
-//	strcat_s(rez.str, newLength + 1, str1);
-//	rez.length = strlen(rez.str);
-//	return rez;
-//}
-
-//MyString MyString::operator+(char c) 
-//{
-//	int newLength = length + 1;
-//	MyString rez(newLength + 1);
-//	strcpy_s(rez.str, length + 1, str);
-//	strcat_s(rez.str, newLength + 1, " ");
-//
-//	char temp[2] = { c, '\0' };
-//	strcat_s(rez.str, newLength + 1, temp);
-//	rez.length = strlen(rez.str);
-//	return rez;
-//}
-
 
 void MyString::Print()
 {
