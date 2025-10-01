@@ -45,16 +45,42 @@ int main()
     cout << "obj5 и obj1: " << obj5.MyStrCmp(obj1) << endl;
     cout << "obj5 и obj5: " << obj5.MyStrCmp(obj5) << endl;
 
-
     cout << MyString::count << endl;
 
     MyString rez = obj1 + obj2;
     MyString rez2 = obj2 + "!!!";
     MyString rez3 = obj2 + "&";
-    MyString rez4 = obj1 - "world";
-    cout << "-----" << endl;
+
+    MyString obj6("Hello world");
+    MyString rez4 = obj6 - " world";
+
+    cout << "YEEEEEEEEE" << endl;
     rez.Print();
     rez2.Print();
     rez3.Print();
     rez4.Print();
+
+    cout << endl;
+    rez4.Print();
+    obj2.Print();
+    cout << endl;
+
+    if (rez4 > obj2)
+    {
+        cout << "Obj1 > obj2" << endl;
+    }
+    if (rez4 < obj2)
+    {
+        cout << "Obj1 < obj2" << endl;
+    }
+    if (rez4 == obj2)
+    {
+        cout << "Obj1 == obj2" << endl;
+    }
+
+    MyString obj7("Hello world");
+    if (obj2 > "Hello")
+    {
+        cout << "Yes";
+    }
 }

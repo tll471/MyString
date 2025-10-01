@@ -26,5 +26,10 @@ public:
 	MyString operator+ (const char* obj);
 	MyString operator- (const MyString& obj);
 	MyString operator+ (char c);
+
+	bool operator>(MyString& obj);
+	bool operator<(MyString& obj);
+	bool operator==(MyString& obj);
+	bool operator>(const char* str);
 };
 

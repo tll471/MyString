@@ -37,7 +37,6 @@ MyString::~MyString()
 	delete[] str;
 }
 
-
 int MyString::count = 0;
 void MyString::PrintCount()
 {
@@ -75,7 +74,11 @@ MyString MyString::operator-(const MyString& obj)
 	int newDlina = length - obj.length;
 	char* temp = new char[newDlina + 1];
 
-	//Дальше я не знаю как правильно реализовать
+	for (int i = 0; i < newDlina; i++) 
+	{
+		temp[i] = str[i];
+	}
+	temp[newDlina] = '\0';
 
 	MyString result(temp);
 	return result;
@@ -90,6 +93,44 @@ MyString MyString::operator+(char c)
 
 	MyString rez(temp);
 	return rez;
+}
+
+bool MyString::operator> (MyString& obj)
+{
+	if (length > obj.length)
+	{
+		return true;
+	}
+	return false;
+}
+
+bool MyString::operator<(MyString& obj)
+{
+	if (length < obj.length)
+	{
+		return true;
+	}
+	return false;
+}
+
+bool MyString::operator==(MyString& obj)
+{
+	if (strcmp(str, obj.str) == 0)
+	{
+		return true;
+	}
+	return false;
+}
+
+bool MyString::operator>(const char* st)
+{
+	int rez = strcmp(str, st);
+
+	if (rez > 0)
+	{
+		return true;
+	}
+	return false;
 }
 
 void MyString::Print()
@@ -170,4 +211,3 @@ int MyString::MyStrCmp(MyString& b)
 	}
 	return 0;
 }
-
