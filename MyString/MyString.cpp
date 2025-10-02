@@ -26,9 +26,9 @@ MyString::MyString(const char* s)
 
 MyString::MyString(const MyString& obj)
 {
+	length = obj.length;
 	str = new char[length + 1];
 	strcpy_s(str, length + 1, obj.str);
-	length = obj.length;
 	count++;
 }
 
@@ -132,7 +132,54 @@ bool MyString::operator>(const char* st)
 	}
 	return false;
 }
+MyString MyString::operator++(int)
+{
+	MyString temp = *this;
+	char* newStr = new char[length + 2];
 
+	strcpy_s(newStr, length + 2, str);
+
+	newStr[length] = ' ';
+	newStr[length + 1] = '\0';
+
+	str = newStr;
+	length += 1;
+
+	return temp;
+}
+MyString MyString::operator++()
+{
+	int newDnila = length + 2;
+	char* newStr = new char[newDnila + 1];
+
+	newStr[0] = ' ';
+	newStr[1] = ' ';
+
+	strcpy_s(newStr + 2, length + 1, str);
+
+	str = newStr;
+	length = newDnila;
+
+	return *this;
+}
+MyString MyString::operator--(int)
+{
+	MyString temp = *this;
+	length -= 1;
+
+	str[length] = '\0';
+
+	return temp;
+}
+MyString MyString::operator--()
+{
+	for (int i = 0; i < length; i++)
+	{
+		str[i] = str[i + 1];
+	}
+
+	return *this;
+}
 void MyString::Print()
 {
 	cout << str << endl;

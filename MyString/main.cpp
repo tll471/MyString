@@ -83,4 +83,29 @@ int main()
     {
         cout << "Yes";
     }
+    cout << endl;
+
+	MyString obj10("Hello");
+	MyString obj11 = obj10++;
+
+    obj10.Print();
+    obj11.Print();
+
+    MyString obj12("Hello");
+    MyString obj13 = ++obj12;
+
+    obj12.Print();
+    obj13.Print();
+
+    MyString obj14("Hello");
+    MyString obj15 = obj14--;
+
+    obj14.Print();
+    obj15.Print();
+
+    MyString obj16("Hello");
+    MyString obj17 = --obj16;
+
+    obj16.Print();
+    obj17.Print();
 }
