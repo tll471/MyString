@@ -45,6 +45,7 @@ int main()
     cout << "obj5 и obj1: " << obj5.MyStrCmp(obj1) << endl;
     cout << "obj5 и obj5: " << obj5.MyStrCmp(obj5) << endl;
 
+
     cout << MyString::count << endl;
 
     MyString rez = obj1 + obj2;
@@ -108,4 +109,17 @@ int main()
 
     obj16.Print();
     obj17.Print();
+
+    cout << "Оператор = " << endl;
+
+    MyString obj100("Oleg");
+    MyString obj101("Pavel");
+    MyString obj102("Gleb");
+
+    obj100 = obj101 = obj102;
+
+    obj100.Print();
+    obj101.Print();
+    obj102.Print();
+
 }

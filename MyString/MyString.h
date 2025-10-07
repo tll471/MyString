@@ -36,5 +36,7 @@ public:
 	MyString operator++ ();
 	MyString operator-- (int);
 	MyString operator-- ();
+
+	MyString& operator= (MyString& obj2);
 };
 

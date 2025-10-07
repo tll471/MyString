@@ -180,6 +180,22 @@ MyString MyString::operator--()
 
 	return *this;
 }
+MyString& MyString::operator=(MyString& obj2)
+{
+	cout << "Yes!" << endl;
+	if (this == &obj2)
+	{
+		return *this;
+	}
+	if (str != nullptr)
+	{
+		delete[] str;
+	}
+	str = new char[strlen(obj2.str) + 1];
+	strcpy_s(str, strlen(obj2.str) + 1, obj2.str);
+
+	return *this;
+}
 void MyString::Print()
 {
 	cout << str << endl;
