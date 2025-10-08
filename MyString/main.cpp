@@ -45,6 +45,9 @@ int main()
     cout << "obj5 и obj1: " << obj5.MyStrCmp(obj1) << endl;
     cout << "obj5 и obj5: " << obj5.MyStrCmp(obj5) << endl;
 
+    //cout << "Конструктор переноса: " << endl;
+   /* MyString objLast = move(obj2);
+    objLast.Print();*/
 
     cout << MyString::count << endl;
 
@@ -121,5 +124,11 @@ int main()
     obj100.Print();
     obj101.Print();
     obj102.Print();
+
+    MyString s("Example");
+    s.Print();
+
+    cout << s[0] << endl;
+    cout << s[3] << endl;
 
 }

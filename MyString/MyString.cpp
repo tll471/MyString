@@ -37,6 +37,14 @@ MyString::~MyString()
 	delete[] str;
 }
 
+MyString::MyString(MyString&& obj)
+{
+	str = obj.str;
+	length = obj.length;
+
+	obj.str = nullptr;
+	obj.length = 0;
+}
 int MyString::count = 0;
 void MyString::PrintCount()
 {
@@ -196,6 +204,20 @@ MyString& MyString::operator=(MyString& obj2)
 
 	return *this;
 }
+
+char MyString::operator[](int index)
+{
+	for (int i = 0; i < length; i++)
+	{
+		if (i == index)
+		{
+			return str[i];
+		}
+	}
+
+	return -1;
+}
+
 void MyString::Print()
 {
 	cout << str << endl;

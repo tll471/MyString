@@ -20,6 +20,7 @@ public:
 	void MyDelChr(char c);
 	int MyStrCmp(MyString& b);
 
+	MyString(MyString&& obj);
 	static void PrintCount();
 	static int count;
 	MyString operator+ (MyString& obj);
@@ -38,5 +39,6 @@ public:
 	MyString operator-- ();
 
 	MyString& operator= (MyString& obj2);
+	char operator[] (int index);
 };
 
